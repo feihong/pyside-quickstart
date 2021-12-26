@@ -23,5 +23,5 @@ Run program
 
 ## Links
 
-- [First steps with Qt Designer](https://www.pythonguis.com/tutorials/pyqt6-first-steps-qt-designer/)
+- [First steps with Qt Designer](https://www.pythonguis.com/tutorials/pyside6-first-steps-qt-designer/)
 - [Manual install of Qt 6](https://the-codeslinger.com/2020/12/20/manual-install-of-qt6-on-linux-mint/)
