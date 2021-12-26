@@ -21,6 +21,10 @@ Run program
 
     python hello.py
 
+Convert .ui file to Python source file
+
+    pyside6-uic mainwindow.ui -o MainWindow.py
+
 ## Links
 
 - [First steps with Qt Designer](https://www.pythonguis.com/tutorials/pyside6-first-steps-qt-designer/)
