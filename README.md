@@ -13,8 +13,15 @@
 
     pip install --user pyside6
 
+In order to install Qt Creator, you must create an account on the Qt website and [download the Qt Online Installer](https://www.qt.io/download-open-source).
+
 ## Commands
 
 Run program
 
     python hello.py
+
+## Links
+
+- [First steps with Qt Designer](https://www.pythonguis.com/tutorials/pyqt6-first-steps-qt-designer/)
+- [Manual install of Qt 6](https://the-codeslinger.com/2020/12/20/manual-install-of-qt6-on-linux-mint/)
