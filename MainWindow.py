@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QSpinBox, QVBoxLayout, QWidget)
+    QMainWindow, QPlainTextEdit, QPushButton, QSizePolicy,
+    QSpacerItem, QSpinBox, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -28,13 +28,12 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.output = QLabel(self.centralwidget)
+        self.output = QPlainTextEdit(self.centralwidget)
         self.output.setObjectName(u"output")
-        self.output.setMinimumSize(QSize(0, 446))
         font = QFont()
         font.setPointSize(40)
         self.output.setFont(font)
-        self.output.setAlignment(Qt.AlignCenter)
+        self.output.setReadOnly(True)
 
         self.verticalLayout.addWidget(self.output)
 
@@ -83,7 +82,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Random Hanzi Generator", None))
-        self.output.setText(QCoreApplication.translate("MainWindow", u"\u4f60\u597d", None))
+        self.output.setPlainText(QCoreApplication.translate("MainWindow", u"\u4f60\u597d", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Number of hanzi", None))
         self.onlyCommon.setText(QCoreApplication.translate("MainWindow", u"Only show common hanzi", None))
         self.button.setText(QCoreApplication.translate("MainWindow", u"Generate", None))

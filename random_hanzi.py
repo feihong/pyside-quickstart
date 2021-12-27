@@ -15,7 +15,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     only_common = self.onlyCommon.checkState() == QtCore.Qt.Checked
     gen_func = hanzi.random_common if only_common else hanzi.random
     text = gen_func(self.count.value())
-    self.output.setText(text)
+    self.output.setPlainText(text)
 
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow()
