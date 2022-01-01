@@ -9,6 +9,12 @@ ApplicationWindow {
   title: "Hello QtQuick"
   property string greeting: "Hello World"
 
+  Shortcut {
+    sequence: StandardKey.Quit
+    context: Qt.ApplicationShortcut
+    onActivated: Qt.quit()
+  }
+
   ColumnLayout {
     anchors.fill: parent
 
