@@ -11,6 +11,8 @@ class MyWidget(QtWidgets.QWidget):
   def __init__(self):
     super().__init__()
 
+    self.setWindowTitle('Hello Qt')
+
     self.button = QtWidgets.QPushButton("Click me!")
     self.label = QtWidgets.QLabel("Hello World",
                                   alignment=QtCore.Qt.AlignCenter)
