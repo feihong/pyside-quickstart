@@ -21,6 +21,7 @@ ApplicationWindow {
     Rectangle {
       Layout.fillHeight: true
       Layout.fillWidth: true
+      color: "transparent"
 
       Text {
         anchors.centerIn: parent
@@ -33,6 +34,7 @@ ApplicationWindow {
     Button {
       Layout.fillWidth: true
       text: "Click me!"
+      onClicked: greeting = "What the heck?"
     }
   }
 }
