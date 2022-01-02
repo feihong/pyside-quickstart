@@ -22,6 +22,7 @@ ApplicationWindow {
 
   ColumnLayout {
     anchors.fill: parent
+    anchors.margins: 10
 
     Pane {
       Layout.fillHeight: true
@@ -47,6 +48,9 @@ ApplicationWindow {
         from: 1
         to: 100
         value: 8
+      }
+      Item {
+        Layout.fillWidth: true
       }
       CheckBox {
         id: checkbox
