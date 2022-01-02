@@ -1,40 +1,30 @@
 """
-Very basic GUI program. Show how to add shortcut and change font size of label.
+Hello World implemented in QtQuick
 """
 import sys
 import random
-from PySide6 import QtCore, QtWidgets, QtGui
 
-messages = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир", "你好世界"]
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine, QmlElement
+from PySide6.QtCore import QObject, Slot
 
-class MyWidget(QtWidgets.QWidget):
-  def __init__(self):
-    super().__init__()
+QML_IMPORT_NAME = 'hello.signals.greeter'
+QML_IMPORT_MAJOR_VERSION = 1
 
-    self.setWindowTitle('Hello Qt')
+@QmlElement
+class Greeter(QObject):
+  messages = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир", "你好世界"]
 
-    self.button = QtWidgets.QPushButton("Click me!")
-    self.label = QtWidgets.QLabel("Hello World",
-                                  alignment=QtCore.Qt.AlignCenter)
-    self.label.setFont(QtGui.QFont(self.font().family(), 40))
+  @Slot(result=str)
+  def random(self):
+    return random.choice(self.messages)
 
-    self.layout = QtWidgets.QVBoxLayout(self)
-    self.layout.addWidget(self.label)
-    self.layout.addWidget(self.button)
+app = QGuiApplication(sys.argv)
 
-    self.button.clicked.connect(self.on_click)
+engine = QQmlApplicationEngine()
+engine.quit.connect(app.quit)
+engine.load('hello.qml')
+if not engine.rootObjects():
+  sys.exit(-1)
 
-    QtGui.QShortcut(QtGui.QKeySequence("Ctrl+Q"), self, self.close)
-
-  @QtCore.Slot()
-  def on_click(self):
-    self.label.setText(random.choice(messages))
-
-if __name__ == "__main__":
-  app = QtWidgets.QApplication([])
-
-  widget = MyWidget()
-  widget.resize(800, 600)
-  widget.show()
-
-  sys.exit(app.exec())
+sys.exit(app.exec())

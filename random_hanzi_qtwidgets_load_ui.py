@@ -1,3 +1,6 @@
+"""
+Random hanzi implemented using QtWidgets and loading directly from .ui file
+"""
 import sys
 import hanzi
 from PySide6 import QtCore, QtGui, QtWidgets
