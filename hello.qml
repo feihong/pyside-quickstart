@@ -9,7 +9,7 @@ ApplicationWindow {
   width: 800
   height: 600
   title: "Hello QtQuick"
-  property string greeting: "Hello World"
+  property int counter: 0
 
   Greeter {
     id: greeter
@@ -23,24 +23,43 @@ ApplicationWindow {
 
   ColumnLayout {
     anchors.fill: parent
+    anchors.margins: 5
 
-    Rectangle {
+    Pane {
       Layout.fillHeight: true
       Layout.fillWidth: true
-      color: "transparent"
 
       Text {
+        id: greeting
         anchors.centerIn: parent
 
-        text: greeting
+        text: "Hello World"
         font.pixelSize: 40
+      }
+    }
+
+    RowLayout {
+      Layout.fillWidth: true
+
+      Item {
+        Layout.fillWidth: true
+      }
+      Label {
+        id: label1
+        text: "Count:"
+      }
+      Label {
+        text: counter.toString()
       }
     }
 
     Button {
       Layout.fillWidth: true
       text: "Click me!"
-      onClicked: greeting = greeter.random()
+      onClicked: function() {
+        counter += 1
+        greeting.text = greeter.random()
+      }
     }
   }
 }
