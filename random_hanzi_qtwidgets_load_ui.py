@@ -1,5 +1,5 @@
 """
-Random hanzi implemented using QtWidgets and loading directly from .ui file
+Random Hanzi implemented using QtWidgets and loading directly from .ui file
 """
 import sys
 import hanzi
